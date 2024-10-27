@@ -1,0 +1,125 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  padding: 0 20px;
+  overflow: hidden;
+  background: #4070f4;
+}
+
+.wrapper {
+  width: 100%;
+  background: #fff;
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 25px 30px 30px 30px;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .header {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.wrapper input {
+  display: none;
+}
+
+.wrapper .nav {
+  position: relative;
+  width: 90%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .nav label {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  line-height: 50px;
+  color: #4070f4;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+#home:checked ~ .nav label.home,
+#blog:checked ~ .nav label.blog,
+#tools:checked ~ .nav label.tools,
+#about:checked ~ .nav label.about,
+#contact:checked ~ .nav label.contact {
+  color: #fff;
+}
+
+.wrapper .nav label:hover {
+  background: rgba(64, 112, 244, 0.1);
+}
+
+.wrapper .nav label i {
+  margin-right: 7px;
+}
+
+.wrapper .nav .slider {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  background: #4070f4;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+  z-index: 0;
+  transition: 0.3s;
+}
+
+#home:checked ~ .nav .slider {
+  left: 0;
+}
+#blog:checked ~ .nav .slider {
+  left: 20%;
+}
+#tools:checked ~ .nav .slider {
+  left: 40%;
+}
+#about:checked ~ .nav .slider {
+  left: 60%;
+}
+#contact:checked ~ .nav .slider {
+  left: 80%;
+}
+
+.wrapper .content {
+  background: #fff;
+  display: none;
+}
+
+#home:checked ~ section .content1,
+#blog:checked ~ section .content2,
+#tools:checked ~ section .content3,
+#about:checked ~ section .content4,
+#contact:checked ~ section .content5
+ {
+  display: block;
+}
+
+.content .title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px 0 10px 0;
+}
+
+.content p {
+  text-align: justify;
+}
